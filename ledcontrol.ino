@@ -34,16 +34,13 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 // you can also call it with a different address and I2C interface
 //Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver(0x40, Wire);
 
-//const char* ssid   = "Univision_7079";
-//const char* password = "6c8d679cd1ba";
 
 /*
-const char* ssid   = "UA_24";
-const char* password = "#UAlliance2020";
 #define STATICIP 1
 */
-const char* ssid   = "AndroidAP";
-const char* password = "ganzorig";
+#define STATICIP 1
+const char* ssid   = "ssid";
+const char* password = "password";
 int timer_start=0;
 int timer_value=0;
 int i;
@@ -125,7 +122,7 @@ void loop() {
   }
   else
   {
-    led_animation();
+    cc();
   }
   
 }
