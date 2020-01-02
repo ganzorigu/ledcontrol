@@ -34,11 +34,8 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 // you can also call it with a different address and I2C interface
 //Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver(0x40, Wire);
 
+#define STATICIP 1
 
-/*
-#define STATICIP 1
-*/
-#define STATICIP 1
 const char* ssid   = "ssid";
 const char* password = "password";
 int timer_start=0;
@@ -112,17 +109,12 @@ void loop() {
     if(toggleTimes>5)
     {
        timer_start=0;
-       // ALL led on
-       /*for (i=0;i<15;i++)
-       {
-          pwm.setPWM(i,0,4090);  
-       } 
-       */
+       //go back default animation after toggling leds 5 times
     }
   }
   else
   {
-    cc();
+    led_animation();  //until rest request comes, led_animation will run indefinitely
   }
   
 }
